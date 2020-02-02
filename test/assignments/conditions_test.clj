@@ -38,3 +38,18 @@
   (testing "falsy value nil and should return :ashwathama"
     (is (= :ashwathama (yudishtira nil))))
   )
+
+(deftest five-point-someone-test
+  (testing "return :satan-bhagat if x is 5"
+    (is (= :satan-bhagat (five-point-someone 5 2))))
+  (testing "return :chetan-bhagat if y is 5"
+    (is (= :chetan-bhagat (five-point-someone 3 5))))
+  (testing "return :greece if x is greater than y"
+    (is (= :greece (five-point-someone 8 4))))
+  (testing "return :universe if none of the above condition matches"
+    (is (= :universe (five-point-someone 0 0))))
+
+  (testing "return :chetan-bhagat even if both x & y are 5"
+    (is (= :chetan-bhagat (five-point-someone 5 5))))
+
+  )
