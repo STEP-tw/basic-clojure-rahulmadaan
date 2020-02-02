@@ -13,8 +13,10 @@
   "Returns the result of x/y unless y is 0. Returns :infinite when y is 0"
   {:level        :easy
    :use          '[if-not zero?]
-   :implemented? false}
-  [x y])
+   :implemented? true}
+  [x y]
+  (if-not (zero? y) (/ x y) :infinite)
+  )
 
 (defn harishchandra
   "Only returns truthy values as themselves.
@@ -104,7 +106,7 @@
   and prepend a 0 to the incremented list concatenated
   with the reverse of the incremented list
   [1 2 3] -> (4 3 2 0 2 3 4)"
-  {:level :easy
-   :use '[as-> reverse]
+  {:level        :easy
+   :use          '[as-> reverse]
    :implemented? false}
   [coll])
