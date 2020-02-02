@@ -25,3 +25,16 @@
   )
 
 
+
+(deftest yudishtira-test
+  (testing "truthy value 3"
+    (is (= 3 (yudishtira 3))))
+  (testing "falsy value '()"
+    (is (= '() (yudishtira '()))))
+  (testing "truthy value empty list"
+    (is (= '() (yudishtira '()))))
+  (testing "falsy value false and should return :ashwathama"
+    (is (= :ashwathama (yudishtira false))))
+  (testing "falsy value nil and should return :ashwathama"
+    (is (= :ashwathama (yudishtira nil))))
+  )
