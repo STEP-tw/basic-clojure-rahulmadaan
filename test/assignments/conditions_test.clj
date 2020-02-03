@@ -83,3 +83,10 @@
   (testing "for non zero"
     (is (= :not-zero (zero-aliases 1))))
   )
+
+(deftest zero-separated-palindrome-test
+  (testing "for positive numbers"
+    (is (= '(4 3 2 0 2 3 4) (zero-separated-palindrome '(1 2 3)))))
+  (testing "for negative numbers"
+    (is (= '(-2 3 0 0 0 3 -2) (zero-separated-palindrome '(-1 2 -3)))))
+  )
