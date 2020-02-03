@@ -53,3 +53,18 @@
     (is (= :chetan-bhagat (five-point-someone 5 5))))
 
   )
+
+(deftest order-in-words-test
+  (testing "x > y & y > z"
+    (is (= [:x-greater-than-y :y-greater-than-z] (order-in-words 4 3 2))))
+  (testing "x > y & z > x"
+    (is (= [:x-greater-than-y :z-greater-than-x] (order-in-words 4 3 6))))
+  (testing "z > x & y < x"
+    (is (= [:z-greater-than-x] (order-in-words 2 3 4))))
+  (testing "all are equal"
+    (is (= [] (order-in-words 4 4 4))))
+  (testing "x > y"
+    (is (= [:x-greater-than-y] (order-in-words 4 2 3))))
+
+  )
+
