@@ -68,3 +68,18 @@
 
   )
 
+
+(deftest zero-aliases-test
+  (testing "for 0"
+    (is (= :zero (zero-aliases 0))))
+  (testing "for '()"
+    (is (= :empty (zero-aliases '()))))
+  (testing "for []"
+    (is (= :empty (zero-aliases []))))
+  (testing "for #{}"
+    (is (= :empty-set (zero-aliases #{}))))
+  (testing "for {}"
+    (is (= :empty-map (zero-aliases {}))))
+  (testing "for non zero"
+    (is (= :not-zero (zero-aliases 1))))
+  )
