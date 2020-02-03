@@ -90,3 +90,11 @@
   (testing "for negative numbers"
     (is (= '(-2 3 0 0 0 3 -2) (zero-separated-palindrome '(-1 2 -3)))))
   )
+
+(deftest duplicating-first
+  (testing "duplicate first element"
+    (is (= [1 1 2 3] (duplicate-first [1 2 3]))))
+  (testing "when given empty coll"
+    (is (nil? (duplicate-first []))))
+  (testing "when first element is nil"
+    (is (= [nil nil 1 2] (duplicate-first [nil 1 2])))))
