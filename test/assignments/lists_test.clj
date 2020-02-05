@@ -24,3 +24,9 @@
   (testing "square of first element"
     (is (= [64 64 64] (sqr-of-the-first [8 5 2]))))
   )
+
+(deftest filter'-test
+  (testing "filtering even numbers"
+    (is (= [2 4] (filter' even? [1 2 3 4 5]))))
+  (testing "filtering odd numbers"
+    (is (= [1 3 5] (filter' odd? [1 2 3 4 5])))))
