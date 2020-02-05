@@ -30,3 +30,9 @@
     (is (= [2 4] (filter' even? [1 2 3 4 5]))))
   (testing "filtering odd numbers"
     (is (= [1 3 5] (filter' odd? [1 2 3 4 5])))))
+
+(deftest reverse'-test
+  (testing "reverse an array"
+    (is (= [6 5 4 3 2 1] (reverse' [1 2 3 4 5 6]))))
+  (testing "reverse an empty array"
+    (is (= [] (reverse' [])))))
