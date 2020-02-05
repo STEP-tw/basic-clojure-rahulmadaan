@@ -13,3 +13,9 @@
   (testing "returns false for not an ascending list"
     (is (= false (ascending? [1 2 4 7 3]))))
   )
+
+(deftest count'-test
+  (testing "number of element in a list"
+    (is (= 5 (count' [1 2 3 4 5]))))
+  (testing "number of element in an empty list"
+    (is (= 0 (count' [])))))
