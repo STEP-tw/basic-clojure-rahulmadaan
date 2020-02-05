@@ -19,3 +19,8 @@
     (is (= 5 (count' [1 2 3 4 5]))))
   (testing "number of element in an empty list"
     (is (= 0 (count' [])))))
+
+(deftest sqr-of-the-first-test
+  (testing "square of first element"
+    (is (= [64 64 64] (sqr-of-the-first [8 5 2]))))
+  )

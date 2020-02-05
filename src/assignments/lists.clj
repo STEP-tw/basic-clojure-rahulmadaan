@@ -200,8 +200,10 @@
   [4 5 6] => [16 16 16]"
   {:level        :easy
    :use          '[map constantly let]
-   :implemented? false}
-  [coll])
+   :implemented? true}
+  [coll]
+  (let [sqr-of-the-first (* (first coll) (first coll))]
+    (map (constantly sqr-of-the-first) coll)))
 
 (defn russian-dolls
   "Given a collection and a number, wrap each element in a nested vector
