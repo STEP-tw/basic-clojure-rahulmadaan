@@ -42,3 +42,11 @@
     (is (= [9] (difference [1 3 5 7] [1 3 5 7 9]))))
   (testing "should return [] for identical lists"
     (is (= [] (difference [2 4 6 8] [2 4 6 8])))))
+
+(deftest double-up-test
+  (testing "should repeat every element twice"
+    (is (= '(1 1 2 2 3 3 4 4) (double-up [1 2 3 4])))
+    )
+  (testing "should return empty list for empty list input"
+    (is (= '() (double-up []))))
+  )
