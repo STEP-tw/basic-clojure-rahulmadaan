@@ -50,3 +50,12 @@
   (testing "should return empty list for empty list input"
     (is (= '() (double-up []))))
   )
+
+(deftest index-of-test
+  (testing "should return 2"
+    (is (= 2 (index-of [1 2 3 4] 3))))
+
+  (testing "should return -1 if the element is not in the list"
+    (is (= -1 (index-of [1 2 3 4] 9))))
+
+  )
