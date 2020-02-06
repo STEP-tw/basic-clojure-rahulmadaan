@@ -36,3 +36,9 @@
     (is (= [6 5 4 3 2 1] (reverse' [1 2 3 4 5 6]))))
   (testing "reverse an empty array"
     (is (= [] (reverse' [])))))
+
+(deftest difference-test
+  (testing "should return [9]"
+    (is (= [9] (difference [1 3 5 7] [1 3 5 7 9]))))
+  (testing "should return [] for identical lists"
+    (is (= [] (difference [2 4 6 8] [2 4 6 8])))))
