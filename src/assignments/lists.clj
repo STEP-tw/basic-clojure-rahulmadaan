@@ -166,7 +166,10 @@
   {:level        :easy
    :use          '[remove into set ->>]
    :implemented? false}
-  [coll1 coll2])
+  [coll1 coll2]
+  (
+    into coll1 (remove (set coll1) coll2))
+  )
 
 ;; points-around-origin is a def not a defn
 (def

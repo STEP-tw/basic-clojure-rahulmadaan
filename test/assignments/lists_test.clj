@@ -75,3 +75,13 @@
     (is (= [] (transpose [[] []]))))
   (testing "with not-empty sequence"
     (is (= [[1 2 3] [4 5 6]] (transpose [[1 4] [2 5] [3 6]])))))
+
+(deftest union-test
+  (testing "with empty collections"
+    (is (= [] (union [] []))))
+  (testing "with no common elements"
+    (is (= [1 2 3 4 5 6] (union [1 2 3] [4 5 6]))))
+  (testing "with common elements but elements doesn't repeat"
+    (is (= [1 2 3 4 5] (union [1 2 3] [3 4 5]))))
+  (testing "with common element and elements repeat"
+    (is (= [1 2 3 1 4 5 6 4] (union [1 2 3 1] [4 5 6 3 2 4])))))
