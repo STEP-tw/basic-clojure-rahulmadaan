@@ -69,3 +69,9 @@
     (is (true? (palindrome? "NaN"))))
   (testing "not a palindrome"
     (is (false? (palindrome? [1 2 3])))))
+
+(deftest transpose-test
+  (testing "with empty sequence"
+    (is (= [] (transpose [[] []]))))
+  (testing "with not-empty sequence"
+    (is (= [[1 2 3] [4 5 6]] (transpose [[1 4] [2 5] [3 6]])))))
