@@ -254,8 +254,15 @@
   {:level        :easy
    :use          '[empty? loop recur butlast rest]
    :dont-use     '[reverse]
-   :implemented? false}
-  [coll])
+   :implemented? true}
+  [coll]
+  (loop [coll coll isPalindrome true]
+    (if (empty? coll)
+      isPalindrome
+      (recur (rest (butlast coll)) (and isPalindrome (= (first coll) (last coll))))
+      )
+    )
+  )
 
 (defn index-of
   "index-of takes a sequence and an element and finds the index
@@ -268,10 +275,10 @@
   [coll n]
   (loop [coll coll index 0]
     (if (empty? coll) -1
-    (if (= (first coll) n)
-      index
-      (recur (rest coll) (inc index))
-      ))))
+                      (if (= (first coll) n)
+                        index
+                        (recur (rest coll) (inc index))
+                        ))))
 
 (defn validate-sudoku-grid
   "Given a 9 by 9 sudoku grid, validate it."
